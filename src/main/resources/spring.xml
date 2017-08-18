@@ -14,5 +14,5 @@
 	
 	<mvc:annotation-driven />
 
-	<bean id="jestClient" class="io.searchbox.client.JestClientFactory"/>	
+	<bean id="jestFactory" class="io.searchbox.client.JestClientFactory"/>
 </beans>
