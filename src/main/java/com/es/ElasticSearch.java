@@ -43,17 +43,8 @@ public class ElasticSearch {
 			return result;
 		}
 		
-		Map<String,Object> source = new HashMap<>();
-		Map<String,Object> indexContent = new HashMap<>();
-		Map<String,Object> message = new HashMap<>();
-		message.put("message", content);
-		indexContent.put("properties", message);
-		source.put(type, indexContent);
 		
-		logger.info("创建索引");
-		String con = JSON.toJSONString(source);
-		logger.info(con);
-		PutMapping putMapping = new PutMapping.Builder(index, type,con).build();
+		PutMapping putMapping = new PutMapping.Builder(index, type,content).build();
 		try {
 			JestClient client = jestFactory.getObject();
 			
